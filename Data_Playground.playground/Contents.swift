@@ -14,3 +14,4 @@ let string64 = dataString.base64EncodedString(options: .lineLength64Characters)
 let normalData = Data(base64Encoded: data64)
 let normalDataC64 = Data(base64Encoded: string64, options: .ignoreUnknownCharacters)
 
+String(data: normalDataC64!, encoding: .utf8)
