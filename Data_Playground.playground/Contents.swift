@@ -19,3 +19,12 @@ dataString.withUnsafeBytes { (data: UnsafePointer<Int>) in
     print(data)
 }
 
+dataString.withUnsafeBytes {
+    $0.pointee
+} as Int
+
+withUnsafeBytes(of: &dataString) {
+    for byte in $0 {
+        print(byte)
+    }
+}
