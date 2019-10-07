@@ -1,10 +1,11 @@
 import UIKit
 
-var str = "Hello, I am a string"
+var string = "Hello, I am a string"
 
-if let dataString = str.data(using: .utf8) {
-    if let str2 = String(data: dataString, encoding: .utf8) {
-        print(str2)
-    }
-    
+guard let dataString = string.data(using: .utf8) else {
+    fatalError()
 }
+dataString
+// Now become to Base64
+let data64 = dataString.base64EncodedData(options: .lineLength64Characters)
+let string64 = dataString.base64EncodedString(options: .lineLength64Characters)
