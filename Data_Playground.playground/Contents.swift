@@ -2,4 +2,7 @@ import UIKit
 
 var str = "Hello, I am a string"
 
-let dataString = str.data(using: .utf8)
+if let dataString = str.data(using: .utf8) {
+    let str2 = String(data: dataString, encoding: .utf8)
+    
+}
